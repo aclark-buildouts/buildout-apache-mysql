@@ -10,7 +10,7 @@ parts =
     mycnf
     apache
     apache-conf
-    gd
+#    gd
     php
     php-conf
     wordpress
@@ -39,7 +39,7 @@ recipe = collective.recipe.grp
 
 [mysql]
 recipe = hexagonit.recipe.cmmi
-url = http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.40.tar.gz/from/http://mirror.trouble-free.net/mysql_mirror/
+url = http://dev.mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.20.tar.gz/from/http://mysql.mirrors.pair.com/
 keep-compile-dir = true
 configure-options =
 
@@ -78,7 +78,7 @@ output = ${buildout:directory}/bin/mysqladmin
 
 [apache]
 recipe = hexagonit.recipe.cmmi
-url = http://mirror.nyi.net/apache/httpd/httpd-2.2.14.tar.gz
+url = http://mirror.nyi.net/apache/httpd/httpd-2.2.21.tar.gz
 keep-compile-dir = true
 configure-options = --enable-so
 
@@ -92,8 +92,8 @@ configure-options =
 recipe = zc.recipe.cmmi
 environment = 
     PATH=${mysql:location}/bin:${env:PATH}
-url = http://us3.php.net/get/php-5.2.11.tar.gz/from/this/mirror
-extra_options = --prefix=${buildout:directory}/parts/apache/php --with-gd=${buildout:directory}/parts/gd --with-apxs2=${buildout:directory}/parts/apache/bin/apxs --with-mysql=${mysql:location} --with-config-file-path=${buildout:directory}/etc/php.ini --enable-mbstring
+url = http://us3.php.net/get/php-5.3.9.tar.gz/from/this/mirror
+extra_options = --prefix=${buildout:directory}/parts/apache/php --with-apxs2=${buildout:directory}/parts/apache/bin/apxs --with-mysql=${mysql:location} --with-config-file-path=${buildout:directory}/etc/php.ini --enable-mbstring
 
 [apache-conf]
 recipe = collective.recipe.template
