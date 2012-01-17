@@ -68,12 +68,12 @@ opt = --port=${ports:mysql} --pid-file=${mycnf:pid} --log-error=${mycnf:err} --b
 
 [mysql-bin]
 recipe = collective.recipe.template
-input = ${buildout:directory}/templates/mysql.in
+url = http://build.pythonpackages.com/buildout/lamp/templates/mysql.in
 output = ${buildout:directory}/bin/mysql
 
 [mysql-admin]
 recipe = collective.recipe.template
-input = ${buildout:directory}/templates/mysqladmin.in
+url = http://build.pythonpackages.com/buildout/lamp/mysqladmin.in
 output = ${buildout:directory}/bin/mysqladmin
 
 [apache]
@@ -98,12 +98,12 @@ extra_options = --prefix=${buildout:directory}/parts/apache/php --with-gd=${buil
 [apache-conf]
 recipe = collective.recipe.template
 port = 12080
-input = ${buildout:directory}/templates/httpd.conf.in
+url = http://build.pythonpackages.com/buildout/lamp/httpd.conf.in
 output = ${buildout:directory}/etc/httpd.conf
 
 [php-conf]
 recipe = collective.recipe.template
-input = ${buildout:directory}/templates/php.ini.in
+url = http://build.pythonpackages.com/buildout/lamp/php.ini.in
 output = ${buildout:directory}/etc/php.ini
 
 [wordpress]
