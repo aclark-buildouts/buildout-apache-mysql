@@ -68,7 +68,7 @@ opt = --port=${ports:mysql} --pid-file=${mycnf:pid} --log-error=${mycnf:err} --b
 
 [mysql-bin]
 recipe = collective.recipe.template
-url = http://build.pythonpackages.com/buildout/lamp/templates/mysql.in
+url = http://build.pythonpackages.com/buildout/lamp/mysql.in
 output = ${buildout:directory}/bin/mysql
 
 [mysql-admin]
